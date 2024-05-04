@@ -96,7 +96,7 @@ export const downloadArchive = async (fileName: string, options: DownloadInfoDto
   try {
     downloadInfo = await getDownloadInfo({ downloadInfoDto: options, key: getKey() });
   } catch (error) {
-    handleError(error, 'Unable to download files');
+    handleError(error, '无法下载文件');
     return;
   }
 
@@ -171,7 +171,7 @@ export const downloadFile = async (asset: AssetResponseDto) => {
 
       notificationController.show({
         type: NotificationType.Info,
-        message: `Downloading asset ${asset.originalFileName}`,
+        message: `正在下载资源 ${asset.originalFileName}`,
       });
 
       // TODO use sdk once it supports progress events
@@ -184,7 +184,7 @@ export const downloadFile = async (asset: AssetResponseDto) => {
 
       downloadBlob(data, filename);
     } catch (error) {
-      handleError(error, `Error downloading ${filename}`);
+      handleError(error, `下载 ${filename} 失败`);
       downloadManager.clear(downloadKey);
     } finally {
       setTimeout(() => downloadManager.clear(downloadKey), 5000);
@@ -246,13 +246,13 @@ export function isWebCompatibleImage(asset: AssetResponseDto): boolean {
 export const getAssetType = (type: AssetTypeEnum) => {
   switch (type) {
     case 'IMAGE': {
-      return 'Photo';
+      return '照片';
     }
     case 'VIDEO': {
-      return 'Video';
+      return '视频';
     }
     default: {
-      return 'Asset';
+      return '资源';
     }
   }
 };
@@ -369,7 +369,7 @@ export const selectAllAssets = async (assetStore: AssetStore, assetInteractionSt
       await delay(0);
     }
   } catch (error) {
-    handleError(error, 'Error selecting all assets');
+    handleError(error, '选择所有资产时出错');
   } finally {
     isSelectingAllAssets.set(false);
   }
