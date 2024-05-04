@@ -54,11 +54,11 @@
     <div class="flex flex-col gap-4">
       {#if forceDelete}
         <p>
-          <b>{user.name}</b>'s account and assets will be queued for permanent deletion <b>immediately</b>.
+          <b>{user.name}</b>的账户和资源将被立即删除，<b>无法恢复.
         </p>
       {:else}
         <p>
-          <b>{user.name}</b>'s account and assets will be scheduled for permanent deletion in {$serverConfig.userDeleteDelay}
+          <b>{user.name}</b>的账户和资源将在 {$serverConfig.userDeleteDelay} 天内被安排删除.
           days.
         </p>
       {/if}
@@ -77,12 +77,11 @@
 
       {#if forceDelete}
         <p class="text-immich-error">
-          WARNING: This will immediately remove the user and all assets. This cannot be undone and the files cannot be
-          recovered.
+          警告：此操作将立即删除用户及其所有资产。此操作无法撤销，并且文件无法恢复.
         </p>
 
         <p class="immich-form-label text-sm" id="confirm-user-desc">
-          To confirm, type "{user.email}" below
+          确认后，请在下方输入"{user.email}"
         </p>
 
         <input
