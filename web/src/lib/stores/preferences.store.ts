@@ -95,20 +95,20 @@ export enum SortOrder {
 }
 
 export enum AlbumViewMode {
-  Cover = 'Cover',
-  List = 'List',
+  Cover = '封面',
+  List = '列表',
 }
 
 export enum AlbumFilter {
-  All = 'All',
-  Owned = 'Owned',
-  Shared = 'Shared',
+  All = '所有',
+  Owned = '本人',
+  Shared = '共享',
 }
 
 export enum AlbumGroupBy {
-  None = 'None',
-  Year = 'Year',
-  Owner = 'Owner',
+  None = '不分类',
+  Year = '按年分类',
+  Owner = '按拥有者分类',
 }
 
 export enum AlbumSortBy {
