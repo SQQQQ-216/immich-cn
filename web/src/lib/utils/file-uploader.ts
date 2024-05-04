@@ -96,7 +96,7 @@ async function fileUploader(asset: File, albumId: string | undefined = undefined
     let responseData: AssetFileUploadResponseDto | undefined;
     const key = getKey();
     if (crypto?.subtle?.digest && !key) {
-      uploadAssetsStore.updateAsset(deviceAssetId, { message: 'Hashing...' });
+      uploadAssetsStore.updateAsset(deviceAssetId, { message: '正在计算哈希值...' });
       await tick();
       try {
         const bytes = await asset.arrayBuffer();
@@ -117,7 +117,7 @@ async function fileUploader(asset: File, albumId: string | undefined = undefined
     }
 
     if (!responseData) {
-      uploadAssetsStore.updateAsset(deviceAssetId, { message: 'Uploading...' });
+      uploadAssetsStore.updateAsset(deviceAssetId, { message: '正在上传...' });
       const response = await uploadRequest<AssetFileUploadResponseDto>({
         url: defaults.baseUrl + '/asset/upload' + (key ? `?key=${key}` : ''),
         data: formData,
@@ -137,9 +137,9 @@ async function fileUploader(asset: File, albumId: string | undefined = undefined
     }
 
     if (albumId && assetId) {
-      uploadAssetsStore.updateAsset(deviceAssetId, { message: 'Adding to album...' });
+      uploadAssetsStore.updateAsset(deviceAssetId, { message: '添加到相册...' });
       await addAssetsToAlbum(albumId, [assetId]);
-      uploadAssetsStore.updateAsset(deviceAssetId, { message: 'Added to album' });
+      uploadAssetsStore.updateAsset(deviceAssetId, { message: '已添加到相册' });
     }
 
     uploadAssetsStore.updateAsset(deviceAssetId, { state: duplicate ? UploadState.DUPLICATED : UploadState.DONE });
