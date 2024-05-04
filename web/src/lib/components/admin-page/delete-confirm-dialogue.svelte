@@ -44,8 +44,8 @@
 
 <ConfirmDialogue
   id="delete-user-confirmation-modal"
-  title="Delete user"
-  confirmText={forceDelete ? 'Permanently Delete' : 'Delete'}
+  title="删除用户"
+  confirmText={forceDelete ? '永久删除' : '删除'}
   onConfirm={handleDeleteUser}
   onClose={() => dispatch('cancel')}
   disabled={deleteButtonDisabled}
