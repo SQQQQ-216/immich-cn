@@ -112,19 +112,19 @@ export const downloadRequest = <TBody = unknown>(options: DownloadRequestOptions
 
 export const getJobName = (jobName: JobName) => {
   const names: Record<JobName, string> = {
-    [JobName.ThumbnailGeneration]: 'Generate Thumbnails',
-    [JobName.MetadataExtraction]: 'Extract Metadata',
-    [JobName.Sidecar]: 'Sidecar Metadata',
-    [JobName.SmartSearch]: 'Smart Search',
-    [JobName.FaceDetection]: 'Face Detection',
-    [JobName.FacialRecognition]: 'Facial Recognition',
-    [JobName.VideoConversion]: 'Transcode Videos',
-    [JobName.StorageTemplateMigration]: 'Storage Template Migration',
-    [JobName.Migration]: 'Migration',
-    [JobName.BackgroundTask]: 'Background Tasks',
-    [JobName.Search]: 'Search',
-    [JobName.Library]: 'Library',
-    [JobName.Notifications]: 'Notifications',
+    [JobName.ThumbnailGeneration]: '生成缩略图',
+    [JobName.MetadataExtraction]: '提取元数据',
+    [JobName.Sidecar]: 'Sidecar元数据',
+    [JobName.SmartSearch]: '智能搜索',
+    [JobName.FaceDetection]: '人脸检测',
+    [JobName.FacialRecognition]: '人脸识别',
+    [JobName.VideoConversion]: '视频转码',
+    [JobName.StorageTemplateMigration]: '存储模板迁移',
+    [JobName.Migration]: '迁移',
+    [JobName.BackgroundTask]: '后台任务',
+    [JobName.Search]: '搜索',
+    [JobName.Library]: '库',
+    [JobName.Notifications]: '通知',
   };
 
   return names[jobName];
@@ -179,9 +179,9 @@ export const getPeopleThumbnailUrl = (personId: string) => {
 
 export const getAssetJobName = (job: AssetJobName) => {
   const names: Record<AssetJobName, string> = {
-    [AssetJobName.RefreshMetadata]: 'Refresh metadata',
-    [AssetJobName.RegenerateThumbnail]: 'Refresh thumbnails',
-    [AssetJobName.TranscodeVideo]: 'Refresh encoded videos',
+    [AssetJobName.RefreshMetadata]: '刷新元数据',
+    [AssetJobName.RegenerateThumbnail]: '刷新缩略图',
+    [AssetJobName.TranscodeVideo]: '刷新编码视频',
   };
 
   return names[job];
@@ -189,9 +189,9 @@ export const getAssetJobName = (job: AssetJobName) => {
 
 export const getAssetJobMessage = (job: AssetJobName) => {
   const messages: Record<AssetJobName, string> = {
-    [AssetJobName.RefreshMetadata]: 'Refreshing metadata',
-    [AssetJobName.RegenerateThumbnail]: `Regenerating thumbnails`,
-    [AssetJobName.TranscodeVideo]: `Refreshing encoded video`,
+    [AssetJobName.RefreshMetadata]: '正在刷新元数据',
+    [AssetJobName.RegenerateThumbnail]: `正在重新生成缩略图`,
+    [AssetJobName.TranscodeVideo]: `正在刷新编码视频`,
   };
 
   return messages[job];
@@ -210,9 +210,9 @@ export const getAssetJobIcon = (job: AssetJobName) => {
 export const copyToClipboard = async (secret: string) => {
   try {
     await navigator.clipboard.writeText(secret);
-    notificationController.show({ message: 'Copied to clipboard!', type: NotificationType.Info });
+    notificationController.show({ message: '复制到剪切板!', type: NotificationType.Info });
   } catch (error) {
-    handleError(error, 'Cannot copy to clipboard, make sure you are accessing the page through https');
+    handleError(error, '无法复制到剪贴板，请确保您正在通过https访问页面');
   }
 };
 
@@ -245,7 +245,7 @@ export const oauth = {
       window.location.href = url;
       return true;
     } catch (error) {
-      handleError(error, 'Unable to login with OAuth');
+      handleError(error, '无法使用OAuth登录');
       return false;
     }
   },
