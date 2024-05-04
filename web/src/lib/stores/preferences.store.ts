@@ -90,8 +90,8 @@ export const sidebarSettings = persisted<SidebarSettings>('sidebar-settings-1', 
 });
 
 export enum SortOrder {
-  Asc = 'asc',
-  Desc = 'desc',
+  Asc = '升序',
+  Desc = '降序',
 }
 
 export enum AlbumViewMode {
@@ -112,12 +112,12 @@ export enum AlbumGroupBy {
 }
 
 export enum AlbumSortBy {
-  Title = 'Title',
-  ItemCount = 'ItemCount',
-  DateModified = 'DateModified',
-  DateCreated = 'DateCreated',
-  MostRecentPhoto = 'MostRecentPhoto',
-  OldestPhoto = 'OldestPhoto',
+  Title = '标题',
+  ItemCount = '项目数量',
+  DateModified = '修改日期',
+  DateCreated = '创建日期',
+  MostRecentPhoto = '最新的照片',
+  OldestPhoto = '最老的照片',
 }
 
 export const albumViewSettings = persisted<AlbumViewSettings>('album-view-settings', {
