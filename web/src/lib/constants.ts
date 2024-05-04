@@ -1,12 +1,12 @@
 export enum AssetAction {
-  ARCHIVE = 'archive',
-  UNARCHIVE = 'unarchive',
-  FAVORITE = 'favorite',
-  UNFAVORITE = 'unfavorite',
-  TRASH = 'trash',
-  DELETE = 'delete',
-  RESTORE = 'restore',
-  ADD = 'add',
+  ARCHIVE = '归档',
+  UNARCHIVE = '取消归档',
+  FAVORITE = '收藏',
+  UNFAVORITE = '取消收藏',
+  TRASH = '移动到回收站',
+  DELETE = '删除',
+  RESTORE = '恢复',
+  ADD = '添加',
 }
 
 export enum AppRoute {
@@ -95,8 +95,8 @@ export const timeDebounceOnSearch: number = 300;
 
 // should be the same values as the ones in the app.html
 export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
+  LIGHT = '浅色',
+  DARK = '深色',
 }
 
 export const fallbackLocale = {
