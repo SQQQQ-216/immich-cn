@@ -21,7 +21,7 @@
         dispatch('fail');
       }
     } catch (error) {
-      handleError(error, 'Unable to restore user');
+      handleError(error, '无法恢复用户');
       dispatch('fail');
     }
   };
@@ -29,7 +29,7 @@
 
 <ConfirmDialogue
   id="restore-user-modal"
-  title="Restore user"
+  title="还原用户"
   confirmText="Continue"
   confirmColor="green"
   onConfirm={handleRestoreUser}
